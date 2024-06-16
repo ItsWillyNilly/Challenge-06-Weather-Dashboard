@@ -1,0 +1,38 @@
+.title-banner {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: whitesmoke;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+}
+
+.location-search {
+    float: left;
+    flex: 25%;
+}
+
+.submit-btn {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content {
+    display: block;
+    flex: 75%;
+}
+
+.content-banner {
+    text-align: center;
+}
+
+.daily-forecast {
+    background-color: navy;
+    display: inline;
+    margin: 16px;
+}
