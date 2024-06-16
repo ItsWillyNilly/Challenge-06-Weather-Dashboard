@@ -43,6 +43,9 @@ function getCurrentForcast(latitude, longitude, city) {
         .then(function(response) {
             let currentDay = moment().format('M/D/YYYY');
 
+            // clears the current forecast before populating with a new one
+            $('#current-forecast').empty();
+
             let currentForecast = $('<div>')
                 .addClass('current-forecast')
 
@@ -80,8 +83,11 @@ function getFiveDayForecast(latitude, longitude, city) {
             }
             return response.json();
         })
-
         .then(function(response) {
+            // Clears the previous 5-day forecast before populating with a new one
+            $('#weekly-forecast').empty();
+
+            // creates a div to hold the five day forecast
             let dailyForecast = $('<div>')
                 .addClass('five-day-forecast');
             
