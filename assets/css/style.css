@@ -36,3 +36,14 @@
     display: inline;
     margin: 16px;
 }
+
+.five-day-forecast {
+    display: inline-block;
+    color: whitesmoke;
+    background-color: dodgerblue;
+    padding: 5px 20px 0 20px;
+}
+
+/* .five-day-forecast {
+
+} */

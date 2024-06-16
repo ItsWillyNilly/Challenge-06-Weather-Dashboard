@@ -41,7 +41,11 @@ function getCurrentForcast(latitude, longitude, city) {
             let currentDay = moment().format('M/D/YYYY');
 
             let currentForecast = $('<div>')
-                .addClass('current-forecast');
+                .addClass('current-forecast')
+
+            let icon = response.list[0].weather[0].icon;
+            let currentIcon = $('<img>')
+                .attr('src', `https://openweathermap.org/img/wn/${icon}@2x.png`)
 
             let currentCity = $('<h3>')
                 .text(`${city}, (${currentDay})`);
@@ -55,7 +59,7 @@ function getCurrentForcast(latitude, longitude, city) {
             let currentHumidity = $('<h5>')
                 .text('Humidity: ' + response.list[0].main.humidity + '%');
 
-            currentForecast.append(currentCity, currentTemp, currentWindSpeed, currentHumidity);
+            currentForecast.append(currentCity, currentIcon, currentTemp, currentWindSpeed, currentHumidity);
             $('#current-forecast').append(currentForecast);
         })
         .catch(e => {
@@ -84,20 +88,23 @@ function getFiveDayForecast(latitude, longitude, city) {
                 // let weatherCard = createWeatherCard(response.list[i].temp, response.list[i].wind_speed, response.list[i].humidity, city, response.list[i].dt);
                 // dailyForecast.append(weatherCard);
                 let currentTime = response.list[i].dt_txt;
+                let icon = response.list[i].weather[0].icon;
 
                 if(currentTime.includes('12:00:00')) {
                     // console.log(response.list[i].main.temp); 
                     let currentTemp = $('<p>')
-                    .text('Temperature: ' + response.list[i].main.temp + '°F');
+                        .text('Temperature: ' + response.list[i].main.temp + '°F');
 
                     let currentWindSpeed = $('<p>')
-                    .text('Wind Speed: ' + response.list[i].wind.speed + 'MPH');
+                        .text('Wind Speed: ' + response.list[i].wind.speed + 'MPH');
     
                     let currentHumidity = $('<p>')
-                    .text('Humidity: ' + response.list[i].main.humidity + '%');
+                        .text('Humidity: ' + response.list[i].main.humidity + '%');
+                    
+                    let currentIcon = $('<img>')
+                        .attr('src', `https://openweathermap.org/img/wn/${icon}@2x.png`)
 
-                    dailyForecast.append(currentTemp, currentWindSpeed, currentHumidity);
-                    $('#current-forecast').append(dailyForecast);
+                    dailyForecast.append(currentTemp, currentIcon, currentWindSpeed, currentHumidity);
                 }
             }
             $('#weekly-forecast').append(dailyForecast);
