@@ -38,12 +38,21 @@
 }
 
 .five-day-forecast {
-    display: inline-block;
-    color: whitesmoke;
-    background-color: dodgerblue;
-    padding: 5px 20px 0 20px;
+    border-color: lightblue;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
 }
 
-/* .five-day-forecast {
+.one-day-forecast-container {
+    display: flex;
+    justify-content: space-between;
+}
 
-} */
+.single-day-forecast {
+    flex: 1;    
+    color: whitesmoke;
+    background-color: dodgerblue;
+    padding: 16px;
+    margin: 0 8px;
+}
