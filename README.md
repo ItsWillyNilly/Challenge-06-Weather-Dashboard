@@ -27,7 +27,7 @@ THEN I am again presented with current and future conditions for that city
 ```
 
 ## Screenshot of the website
-Screenshot <img src="assets/images/Screenshot 2024-04-24 at 5.49.42 PM.png">
+Screenshot <img src="assets/images/Screenshot 2024-06-16 at 7.53.05 PM.png">
 
 ## Website Link
 https://itswillynilly.github.io/Challenge-03-Employee-Payroll-Tracker/
