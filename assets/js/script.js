@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 // gets the forcast using the city name and then getting the longitude and latitude form the city name
 function getForecasts(city) {
-    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
     // fetches the data from the api using the city returns a message if the city was an invalid entry otherwise it returns the data
     fetch(apiUrl)
