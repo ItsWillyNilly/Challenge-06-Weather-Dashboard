@@ -1,5 +1,5 @@
 # Challenge-06-Weather-Dashboard
-This is an weather dashboard created using HTML, JavaScript and CSS.
+This is an weather dashboard created using HTML, JavaScript, CSS, JQuery, Bootstrap, and OpenWeather API.
 
 ## Description
 I was tasked with creating a weather dashboard from start to finish utilizing OpenWeather, a server API. The app takes in a request from the user about what city they would like to look up and the app will display the weather for the current day and also a five day forecast. After, the search history is displayed on the right side of the browser with previously searched locations.
@@ -30,7 +30,7 @@ THEN I am again presented with current and future conditions for that city
 Screenshot <img src="assets/images/Screenshot 2024-06-16 at 7.53.05 PM.png">
 
 ## Website Link
-https://itswillynilly.github.io/Challenge-03-Employee-Payroll-Tracker/
+https://itswillynilly.github.io/Challenge-06-Weather-Dashboard/
 
 ## GitHub Repo Link
 https://github.com/ItsWillyNilly/Challenge-06-Weather-Dashboard
