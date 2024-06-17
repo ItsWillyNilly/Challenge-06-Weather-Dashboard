@@ -73,7 +73,7 @@ function getCurrentForcast(latitude, longitude, city) {
         });    
 }
 
-function getFiveDayForecast(latitude, longitude, city) {
+function getFiveDayForecast(latitude, longitude) {
     const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
 
     fetch(apiUrl)
@@ -87,9 +87,14 @@ function getFiveDayForecast(latitude, longitude, city) {
             // Clears the previous 5-day forecast before populating with a new one
             $('#weekly-forecast').empty();
 
+            let weeklyForecastBanner = $('<h3>')
+                .text('Your 5-Day Forecast');
+            
+            $('#weekly-forecast').append(weeklyForecastBanner);  
+
             // creates a div to hold the five day forecast
             let dailyForecast = $('<div>')
-                .addClass('five-day-forecast');
+                .addClass('five-day-forecast')
             
             let singleDayForecastContainer = $('<div>')
                 .attr('id', 'one-day')
@@ -107,6 +112,10 @@ function getFiveDayForecast(latitude, longitude, city) {
                     // console.log(response.list[i].main.temp); 
 
                     let singleDayForecast = $('<div>').addClass('single-day-forecast');
+                    let forecastDate = moment(response.list[i].dt_txt).format('M/D/YYYY');
+
+                    let currentDate = $('<h5>')
+                        .text(forecastDate);
 
                     let currentTemp = $('<p>')
                         .text('Temperature: ' + response.list[i].main.temp + '°F');
@@ -120,7 +129,7 @@ function getFiveDayForecast(latitude, longitude, city) {
                     let currentIcon = $('<img>')
                         .attr('src', `https://openweathermap.org/img/wn/${icon}@2x.png`)
 
-                    singleDayForecast.append(currentTemp, currentIcon, currentWindSpeed, currentHumidity);
+                    singleDayForecast.append(currentDate, currentTemp, currentIcon, currentWindSpeed, currentHumidity);
                     singleDayForecastContainer.append(singleDayForecast);
                 }
             }
